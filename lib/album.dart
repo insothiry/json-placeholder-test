@@ -7,8 +7,7 @@ import 'package:http/http.dart' as http;
 /// GET
 Future<Album> fetchAlbum() async {
   final response = await http.get(Uri.parse(
-      'https://jsonplaceholder.typicode.com/insothiry/api-dio/posts/1'));
-
+      'https://jsonplaceholder.typicode.com/insothiry/api-dio/db/posts'));
   if (response.statusCode == 200) {
     return Album.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   } else {
